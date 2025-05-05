@@ -10,7 +10,7 @@ namespace Operator
     {
         static void Main(string[] args)
         {
-            Person p1 = new Person();
+            /*Person p1 = new Person();
             Person p2 = new Person();
             p1.name = "scholar";
             p2.name = "sjc";
@@ -25,6 +25,19 @@ namespace Operator
             {
                 Console.WriteLine(p.name);
             }
+*/
+
+            // 显式类型转换
+/*            Stone stone = new Stone();
+            stone.Age = 1000;
+            Monkey m = (Monkey)stone;
+            Console.WriteLine(m.Age);*/
+            // 隐式类型转换
+            Stone stone = new Stone();
+            stone.Age = 1000;
+            Monkey m = stone;
+            Console.WriteLine(m.Age);
+
             Console.ReadLine();
         }
     }
@@ -62,5 +75,30 @@ namespace Operator
             }
             return people;
         }
+    }
+
+    class Stone
+    {
+        public int Age;
+
+        // explicit
+        /*        public static explicit operator Monkey(Stone stone)
+                {
+                    Monkey monkey = new Monkey();
+                    monkey.Age = stone.Age / 100;
+                    return monkey;
+                }*/
+        // implicit
+        public static implicit operator Monkey(Stone stone)
+        {
+            Monkey monkey = new Monkey();
+            monkey.Age = stone.Age / 100;
+            return monkey;
+        }
+    }
+
+    class Monkey
+    {
+        public int Age;
     }
 }
