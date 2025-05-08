@@ -32,7 +32,7 @@ namespace StudentManagerPro
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.系统SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.PwdModify = new System.Windows.Forms.ToolStripMenuItem();
+            this.pwdModify = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.ExitSys = new System.Windows.Forms.ToolStripMenuItem();
             this.添加学员管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,23 +56,23 @@ namespace StudentManagerPro
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.spContainer = new System.Windows.Forms.SplitContainer();
             this.button8 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnStudentManage = new System.Windows.Forms.Button();
+            this.btnImportData = new System.Windows.Forms.Button();
+            this.btnAddStudent = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spContainer)).BeginInit();
+            this.spContainer.Panel1.SuspendLayout();
+            this.spContainer.Panel2.SuspendLayout();
+            this.spContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -94,28 +94,28 @@ namespace StudentManagerPro
             // 系统SToolStripMenuItem
             // 
             this.系统SToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.PwdModify,
+            this.pwdModify,
             this.toolStripSeparator1,
             this.ExitSys});
             this.系统SToolStripMenuItem.Name = "系统SToolStripMenuItem";
             this.系统SToolStripMenuItem.Size = new System.Drawing.Size(59, 21);
             this.系统SToolStripMenuItem.Text = "系统(&S)";
             // 
-            // PwdModify
+            // pwdModify
             // 
-            this.PwdModify.Name = "PwdModify";
-            this.PwdModify.Size = new System.Drawing.Size(144, 22);
-            this.PwdModify.Text = "密码修改(&M)";
+            this.pwdModify.Name = "pwdModify";
+            this.pwdModify.Size = new System.Drawing.Size(180, 22);
+            this.pwdModify.Text = "密码修改(&M)";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(141, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // ExitSys
             // 
             this.ExitSys.Name = "ExitSys";
-            this.ExitSys.Size = new System.Drawing.Size(144, 22);
+            this.ExitSys.Size = new System.Drawing.Size(180, 22);
             this.ExitSys.Text = "退出系统(&E)";
             // 
             // 添加学员管理ToolStripMenuItem
@@ -264,37 +264,37 @@ namespace StudentManagerPro
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(79, 17);
             this.toolStripStatusLabel2.Text = "[当前用户***]";
             // 
-            // splitContainer1
+            // spContainer
             // 
-            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.IsSplitterFixed = true;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 25);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.splitContainer1.Name = "splitContainer1";
+            this.spContainer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.spContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.spContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.spContainer.IsSplitterFixed = true;
+            this.spContainer.Location = new System.Drawing.Point(0, 25);
+            this.spContainer.Margin = new System.Windows.Forms.Padding(0);
+            this.spContainer.Name = "spContainer";
             // 
-            // splitContainer1.Panel1
+            // spContainer.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.button8);
-            this.splitContainer1.Panel1.Controls.Add(this.button6);
-            this.splitContainer1.Panel1.Controls.Add(this.button4);
-            this.splitContainer1.Panel1.Controls.Add(this.button7);
-            this.splitContainer1.Panel1.Controls.Add(this.button5);
-            this.splitContainer1.Panel1.Controls.Add(this.button3);
-            this.splitContainer1.Panel1.Controls.Add(this.button2);
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
-            this.splitContainer1.Panel1.Controls.Add(this.monthCalendar1);
+            this.spContainer.Panel1.Controls.Add(this.button8);
+            this.spContainer.Panel1.Controls.Add(this.button6);
+            this.spContainer.Panel1.Controls.Add(this.button4);
+            this.spContainer.Panel1.Controls.Add(this.button7);
+            this.spContainer.Panel1.Controls.Add(this.button5);
+            this.spContainer.Panel1.Controls.Add(this.btnStudentManage);
+            this.spContainer.Panel1.Controls.Add(this.btnImportData);
+            this.spContainer.Panel1.Controls.Add(this.btnAddStudent);
+            this.spContainer.Panel1.Controls.Add(this.monthCalendar1);
             // 
-            // splitContainer1.Panel2
+            // spContainer.Panel2
             // 
-            this.splitContainer1.Panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("splitContainer1.Panel2.BackgroundImage")));
-            this.splitContainer1.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Size = new System.Drawing.Size(963, 522);
-            this.splitContainer1.SplitterDistance = 261;
-            this.splitContainer1.SplitterWidth = 3;
-            this.splitContainer1.TabIndex = 2;
+            this.spContainer.Panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("spContainer.Panel2.BackgroundImage")));
+            this.spContainer.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.spContainer.Panel2.Controls.Add(this.label1);
+            this.spContainer.Size = new System.Drawing.Size(963, 522);
+            this.spContainer.SplitterDistance = 261;
+            this.spContainer.SplitterWidth = 3;
+            this.spContainer.TabIndex = 2;
             // 
             // button8
             // 
@@ -346,35 +346,38 @@ namespace StudentManagerPro
             this.button5.Text = "成绩分析";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnStudentManage
             // 
-            this.button3.Location = new System.Drawing.Point(19, 259);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(74, 30);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "学员管理";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnStudentManage.Location = new System.Drawing.Point(19, 259);
+            this.btnStudentManage.Margin = new System.Windows.Forms.Padding(2);
+            this.btnStudentManage.Name = "btnStudentManage";
+            this.btnStudentManage.Size = new System.Drawing.Size(74, 30);
+            this.btnStudentManage.TabIndex = 1;
+            this.btnStudentManage.Text = "学员管理";
+            this.btnStudentManage.UseVisualStyleBackColor = true;
+            this.btnStudentManage.Click += new System.EventHandler(this.btnStudentManage_Click);
             // 
-            // button2
+            // btnImportData
             // 
-            this.button2.Location = new System.Drawing.Point(141, 211);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(74, 30);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "批量导入";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnImportData.Location = new System.Drawing.Point(141, 211);
+            this.btnImportData.Margin = new System.Windows.Forms.Padding(2);
+            this.btnImportData.Name = "btnImportData";
+            this.btnImportData.Size = new System.Drawing.Size(74, 30);
+            this.btnImportData.TabIndex = 1;
+            this.btnImportData.Text = "批量导入";
+            this.btnImportData.UseVisualStyleBackColor = true;
+            this.btnImportData.Click += new System.EventHandler(this.btnImportData_Click);
             // 
-            // button1
+            // btnAddStudent
             // 
-            this.button1.Location = new System.Drawing.Point(19, 211);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(74, 30);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "添加学员";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAddStudent.Location = new System.Drawing.Point(19, 211);
+            this.btnAddStudent.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddStudent.Name = "btnAddStudent";
+            this.btnAddStudent.Size = new System.Drawing.Size(74, 30);
+            this.btnAddStudent.TabIndex = 1;
+            this.btnAddStudent.Text = "添加学员";
+            this.btnAddStudent.UseVisualStyleBackColor = true;
+            this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
             // monthCalendar1
             // 
@@ -399,7 +402,7 @@ namespace StudentManagerPro
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(963, 569);
-            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.spContainer);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -412,11 +415,11 @@ namespace StudentManagerPro
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.spContainer.Panel1.ResumeLayout(false);
+            this.spContainer.Panel2.ResumeLayout(false);
+            this.spContainer.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spContainer)).EndInit();
+            this.spContainer.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -426,7 +429,7 @@ namespace StudentManagerPro
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 系统SToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem PwdModify;
+        private System.Windows.Forms.ToolStripMenuItem pwdModify;
         private System.Windows.Forms.ToolStripMenuItem ExitSys;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem 添加学员管理ToolStripMenuItem;
@@ -450,15 +453,15 @@ namespace StudentManagerPro
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
-        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.SplitContainer spContainer;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnStudentManage;
+        private System.Windows.Forms.Button btnImportData;
+        private System.Windows.Forms.Button btnAddStudent;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Label label1;
     }
