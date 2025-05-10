@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Students>
+	<Student>
+		<StuName>小明</StuName>
+		<StuAge>20</StuAge>
+		<StuSex>男</StuSex>
+		<Class>计算机1班</Class>
+	</Student>
+	<Student>
+		<StuName>小红</StuName>
+		<StuAge>22</StuAge>
+		<StuSex>女</StuSex>
+		<Class>计算机1班</Class>
+	</Student>
+	<Student>
+		<StuName>小王</StuName>
+		<StuAge>23</StuAge>
+		<StuSex>男</StuSex>
+		<Class>计算机2班</Class>
+	</Student>
+	<Student>
+		<StuName>小白</StuName>
+		<StuAge>21</StuAge>
+		<StuSex>女</StuSex>
+		<Class>计算机2班</Class>
+	</Student>
+	<Student>
+		<StuName>小琳</StuName>
+		<StuAge>23</StuAge>
+		<StuSex>女</StuSex>
+		<Class>计算机3班</Class>
+	</Student>
+	<DataInfo>
+		<Version vNo ="1.2" pTime="2025-5-10">数据版本信息</Version>
+	</DataInfo>
+</Students>
+	
