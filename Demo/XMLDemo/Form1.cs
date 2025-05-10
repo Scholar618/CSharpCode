@@ -58,5 +58,23 @@ namespace XMLDemo
             }
             this.dgvStuList.DataSource = stus;
         }
+
+        // 查找XML节点两个属性值
+        private void btnShowVersion_Click(object sender, EventArgs e)
+        {
+            // 创建XML读取器
+            XmlTextReader tReader = new XmlTextReader("StuFile.xml");
+            string info = null;
+            while (tReader.Read())
+            {
+                if (tReader.Name == "Version")
+                {
+                    info = "版本：" + tReader.GetAttribute("vNo") 
+                        + "发布时间：" + tReader.GetAttribute("pTime");
+                    break;
+                }
+            }
+            MessageBox.Show(info);
+        }
     }
 }
