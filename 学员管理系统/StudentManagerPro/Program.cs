@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Models;
+
 namespace StudentManagerPro
 {
     static class Program
@@ -16,8 +18,24 @@ namespace StudentManagerPro
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMain());
+
+
+            // 显示登陆窗体
+            FrmUserLogin frmUserLogin = new FrmUserLogin();
+            DialogResult dialogResult = frmUserLogin.ShowDialog();
+
+            if (dialogResult == DialogResult.OK)
+                Application.Run(new FrmMain());
+            else
+                Application.Exit();
+
+
+            // Application.Run(new FrmMain());
             // Application.Run(new FrmUserLogin());
+            // Application.Run(new FrmAddStudent());
         }
+
+        // 登陆用户信息
+        public static SysAdmin currentAdmin = null;
     }
 }

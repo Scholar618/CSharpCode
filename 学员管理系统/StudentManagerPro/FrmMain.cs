@@ -15,6 +15,7 @@ namespace StudentManagerPro
         public FrmMain()
         {
             InitializeComponent();
+            this.labelCurrentUser.Text = Program.currentAdmin.AdminName + "]";
         }
 
         #region 关闭已存在窗体并打开新窗体
