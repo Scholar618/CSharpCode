@@ -74,6 +74,7 @@ namespace StudentManagerPro
             this.Close();
         }
 
+        #region 回车键确认
         private void tbUserName_KeyDown(object sender, KeyEventArgs e)
         {
             if (this.tbUserName.Text.Trim().Length != 0 && e.KeyValue == 13)
@@ -90,5 +91,6 @@ namespace StudentManagerPro
                 btnLogin_Click(null, null);
             }
         }
+        #endregion
     }
 }

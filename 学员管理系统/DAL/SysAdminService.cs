@@ -50,5 +50,22 @@ namespace DAL
             return objAdmin;
         }
 
+        /// <summary>
+        /// 修改密码
+        /// </summary>
+        /// <param name="objAdmin"></param>
+        public int ModifyPwd(SysAdmin objAdmin)
+        {
+            string sql = "update Admins set LoginPwd = '{0}' where LoginId = {1}";
+            sql = string.Format(sql, objAdmin.LoginPwd, objAdmin.LoginId);
+            try
+            {
+                return SQLHelper.Update(sql);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("修改密码出现数据访问错误：" + ex.Message);
+            }
+        }
     }
 }

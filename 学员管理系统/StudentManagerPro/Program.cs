@@ -19,7 +19,6 @@ namespace StudentManagerPro
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-
             // 显示登陆窗体
             FrmUserLogin frmUserLogin = new FrmUserLogin();
             DialogResult dialogResult = frmUserLogin.ShowDialog();
