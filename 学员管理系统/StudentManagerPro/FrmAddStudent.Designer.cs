@@ -32,16 +32,16 @@ namespace StudentManagerPro
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pbStuPhoto = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btDeletePhoto = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbClassName = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.dtpBirthday = new System.Windows.Forms.DateTimePicker();
+            this.rdoMale = new System.Windows.Forms.RadioButton();
+            this.rdoFemale = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -50,14 +50,14 @@ namespace StudentManagerPro
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.tbPhone = new System.Windows.Forms.TextBox();
+            this.tbIdCard = new System.Windows.Forms.TextBox();
+            this.tbAddress = new System.Windows.Forms.TextBox();
+            this.tbWorkCard = new System.Windows.Forms.TextBox();
+            this.tbStuName = new System.Windows.Forms.TextBox();
+            this.btnAddStu = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btSelectPhoto = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,7 +67,7 @@ namespace StudentManagerPro
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStuPhoto)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -87,27 +87,28 @@ namespace StudentManagerPro
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Location = new System.Drawing.Point(29, 99);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(245, 187);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
+            // pbStuPhoto
             // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(619, 99);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(247, 187);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.pbStuPhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbStuPhoto.Location = new System.Drawing.Point(619, 99);
+            this.pbStuPhoto.Margin = new System.Windows.Forms.Padding(4);
+            this.pbStuPhoto.Name = "pbStuPhoto";
+            this.pbStuPhoto.Size = new System.Drawing.Size(247, 187);
+            this.pbStuPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbStuPhoto.TabIndex = 1;
+            this.pbStuPhoto.TabStop = false;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.Location = new System.Drawing.Point(317, 99);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 48);
             this.button1.TabIndex = 2;
@@ -117,39 +118,40 @@ namespace StudentManagerPro
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(451, 99);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(125, 48);
             this.button2.TabIndex = 2;
-            this.button2.Text = "开始拍照";
+            this.button2.Text = "关闭摄像头";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btDeletePhoto
             // 
-            this.button3.Location = new System.Drawing.Point(451, 170);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(125, 48);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "清除照片";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btDeletePhoto.Location = new System.Drawing.Point(451, 170);
+            this.btDeletePhoto.Margin = new System.Windows.Forms.Padding(4);
+            this.btDeletePhoto.Name = "btDeletePhoto";
+            this.btDeletePhoto.Size = new System.Drawing.Size(125, 48);
+            this.btDeletePhoto.TabIndex = 2;
+            this.btDeletePhoto.Text = "清除照片";
+            this.btDeletePhoto.UseVisualStyleBackColor = true;
+            this.btDeletePhoto.Click += new System.EventHandler(this.btDeletePhoto_Click);
             // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(317, 170);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(125, 48);
             this.button4.TabIndex = 2;
-            this.button4.Text = "选择图片";
+            this.button4.Text = "开始拍照";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cbClassName);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.dtpBirthday);
+            this.groupBox1.Controls.Add(this.rdoMale);
+            this.groupBox1.Controls.Add(this.rdoFemale);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label8);
@@ -158,15 +160,15 @@ namespace StudentManagerPro
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.tbPhone);
+            this.groupBox1.Controls.Add(this.tbIdCard);
+            this.groupBox1.Controls.Add(this.tbAddress);
+            this.groupBox1.Controls.Add(this.tbWorkCard);
+            this.groupBox1.Controls.Add(this.tbStuName);
             this.groupBox1.Location = new System.Drawing.Point(25, 294);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(963, 138);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
@@ -177,45 +179,45 @@ namespace StudentManagerPro
             this.cbClassName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbClassName.FormattingEnabled = true;
             this.cbClassName.Location = new System.Drawing.Point(811, 32);
-            this.cbClassName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbClassName.Margin = new System.Windows.Forms.Padding(4);
             this.cbClassName.Name = "cbClassName";
             this.cbClassName.Size = new System.Drawing.Size(131, 23);
             this.cbClassName.TabIndex = 4;
             // 
-            // dateTimePicker1
+            // dtpBirthday
             // 
-            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
-            this.dateTimePicker1.Font = new System.Drawing.Font("宋体", 10F);
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(527, 31);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(176, 27);
-            this.dateTimePicker1.TabIndex = 3;
+            this.dtpBirthday.CustomFormat = "yyyy-MM-dd";
+            this.dtpBirthday.Font = new System.Drawing.Font("宋体", 10F);
+            this.dtpBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpBirthday.Location = new System.Drawing.Point(527, 31);
+            this.dtpBirthday.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpBirthday.Name = "dtpBirthday";
+            this.dtpBirthday.Size = new System.Drawing.Size(176, 27);
+            this.dtpBirthday.TabIndex = 3;
             // 
-            // radioButton2
+            // rdoMale
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(393, 35);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(43, 19);
-            this.radioButton2.TabIndex = 2;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "女";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdoMale.AutoSize = true;
+            this.rdoMale.Location = new System.Drawing.Point(393, 35);
+            this.rdoMale.Margin = new System.Windows.Forms.Padding(4);
+            this.rdoMale.Name = "rdoMale";
+            this.rdoMale.Size = new System.Drawing.Size(43, 19);
+            this.rdoMale.TabIndex = 2;
+            this.rdoMale.TabStop = true;
+            this.rdoMale.Text = "女";
+            this.rdoMale.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rdoFemale
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(351, 35);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(43, 19);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "男";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdoFemale.AutoSize = true;
+            this.rdoFemale.Location = new System.Drawing.Point(351, 35);
+            this.rdoFemale.Margin = new System.Windows.Forms.Padding(4);
+            this.rdoFemale.Name = "rdoFemale";
+            this.rdoFemale.Size = new System.Drawing.Size(43, 19);
+            this.rdoFemale.TabIndex = 2;
+            this.rdoFemale.TabStop = true;
+            this.rdoFemale.Text = "男";
+            this.rdoFemale.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -297,64 +299,65 @@ namespace StudentManagerPro
             this.label2.TabIndex = 1;
             this.label2.Text = "学员姓名：";
             // 
-            // textBox4
+            // tbPhone
             // 
-            this.textBox4.Font = new System.Drawing.Font("宋体", 10F);
-            this.textBox4.Location = new System.Drawing.Point(747, 66);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(195, 27);
-            this.textBox4.TabIndex = 0;
+            this.tbPhone.Font = new System.Drawing.Font("宋体", 10F);
+            this.tbPhone.Location = new System.Drawing.Point(747, 66);
+            this.tbPhone.Margin = new System.Windows.Forms.Padding(4);
+            this.tbPhone.Name = "tbPhone";
+            this.tbPhone.Size = new System.Drawing.Size(195, 27);
+            this.tbPhone.TabIndex = 0;
             // 
-            // textBox2
+            // tbIdCard
             // 
-            this.textBox2.Font = new System.Drawing.Font("宋体", 10F);
-            this.textBox2.Location = new System.Drawing.Point(119, 66);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(261, 27);
-            this.textBox2.TabIndex = 0;
+            this.tbIdCard.Font = new System.Drawing.Font("宋体", 10F);
+            this.tbIdCard.Location = new System.Drawing.Point(119, 66);
+            this.tbIdCard.Margin = new System.Windows.Forms.Padding(4);
+            this.tbIdCard.Name = "tbIdCard";
+            this.tbIdCard.Size = new System.Drawing.Size(261, 27);
+            this.tbIdCard.TabIndex = 0;
             // 
-            // textBox5
+            // tbAddress
             // 
-            this.textBox5.Location = new System.Drawing.Point(119, 99);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(627, 25);
-            this.textBox5.TabIndex = 0;
+            this.tbAddress.Location = new System.Drawing.Point(119, 99);
+            this.tbAddress.Margin = new System.Windows.Forms.Padding(4);
+            this.tbAddress.Name = "tbAddress";
+            this.tbAddress.Size = new System.Drawing.Size(627, 25);
+            this.tbAddress.TabIndex = 0;
             // 
-            // textBox3
+            // tbWorkCard
             // 
-            this.textBox3.Location = new System.Drawing.Point(472, 68);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(179, 25);
-            this.textBox3.TabIndex = 0;
+            this.tbWorkCard.Location = new System.Drawing.Point(472, 68);
+            this.tbWorkCard.Margin = new System.Windows.Forms.Padding(4);
+            this.tbWorkCard.Name = "tbWorkCard";
+            this.tbWorkCard.Size = new System.Drawing.Size(179, 25);
+            this.tbWorkCard.TabIndex = 0;
             // 
-            // textBox1
+            // tbStuName
             // 
-            this.textBox1.Location = new System.Drawing.Point(119, 32);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(179, 25);
-            this.textBox1.TabIndex = 0;
+            this.tbStuName.Location = new System.Drawing.Point(119, 32);
+            this.tbStuName.Margin = new System.Windows.Forms.Padding(4);
+            this.tbStuName.Name = "tbStuName";
+            this.tbStuName.Size = new System.Drawing.Size(179, 25);
+            this.tbStuName.TabIndex = 0;
             // 
-            // button5
+            // btnAddStu
             // 
-            this.button5.BackColor = System.Drawing.Color.LightGray;
-            this.button5.Location = new System.Drawing.Point(767, 44);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 48);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "确认添加";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnAddStu.BackColor = System.Drawing.Color.LightGray;
+            this.btnAddStu.Location = new System.Drawing.Point(767, 44);
+            this.btnAddStu.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddStu.Name = "btnAddStu";
+            this.btnAddStu.Size = new System.Drawing.Size(100, 48);
+            this.btnAddStu.TabIndex = 2;
+            this.btnAddStu.Text = "确认添加";
+            this.btnAddStu.UseVisualStyleBackColor = false;
+            this.btnAddStu.Click += new System.EventHandler(this.btnAddStu_Click);
             // 
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.LightGray;
             this.btnClose.Location = new System.Drawing.Point(624, 44);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(100, 48);
             this.btnClose.TabIndex = 2;
@@ -362,15 +365,16 @@ namespace StudentManagerPro
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // button6
+            // btSelectPhoto
             // 
-            this.button6.Location = new System.Drawing.Point(317, 239);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(125, 48);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "选择图片";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btSelectPhoto.Location = new System.Drawing.Point(317, 239);
+            this.btSelectPhoto.Margin = new System.Windows.Forms.Padding(4);
+            this.btSelectPhoto.Name = "btSelectPhoto";
+            this.btSelectPhoto.Size = new System.Drawing.Size(125, 48);
+            this.btSelectPhoto.TabIndex = 2;
+            this.btSelectPhoto.Text = "选择图片";
+            this.btSelectPhoto.UseVisualStyleBackColor = true;
+            this.btSelectPhoto.Click += new System.EventHandler(this.btSelectPhoto_Click);
             // 
             // dataGridView1
             // 
@@ -395,7 +399,7 @@ namespace StudentManagerPro
             this.Column7,
             this.Column5});
             this.dataGridView1.Location = new System.Drawing.Point(29, 451);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -471,21 +475,21 @@ namespace StudentManagerPro
             this.ClientSize = new System.Drawing.Size(1011, 646);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.btSelectPhoto);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btDeletePhoto);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnAddStu);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pbStuPhoto);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAddStudent";
             this.Text = "添加新学员";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStuPhoto)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -498,32 +502,32 @@ namespace StudentManagerPro
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pbStuPhoto;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btDeletePhoto;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.DateTimePicker dtpBirthday;
+        private System.Windows.Forms.RadioButton rdoMale;
+        private System.Windows.Forms.RadioButton rdoFemale;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbStuName;
         private System.Windows.Forms.ComboBox cbClassName;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox tbPhone;
+        private System.Windows.Forms.TextBox tbIdCard;
+        private System.Windows.Forms.TextBox tbAddress;
+        private System.Windows.Forms.TextBox tbWorkCard;
+        private System.Windows.Forms.Button btnAddStu;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btSelectPhoto;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
