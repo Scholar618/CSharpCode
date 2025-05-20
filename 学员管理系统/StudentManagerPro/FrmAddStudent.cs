@@ -17,6 +17,7 @@ namespace StudentManagerPro
     {
         public StudentClassService studentClassService = new StudentClassService();
         public StudentService studentService = new StudentService();
+        List<Student> stuList = new List<Student>();
 
         public FrmAddStudent()
         {
@@ -26,6 +27,8 @@ namespace StudentManagerPro
             this.cbClassName.DisplayMember = "ClassName";
             this.cbClassName.ValueMember = "ClassId";
             this.cbClassName.SelectedIndex = -1;
+
+            this.dgvAddStudent.AutoGenerateColumns = false;// 禁止自动生成列
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -59,7 +62,7 @@ namespace StudentManagerPro
                 return;
             }
 
-            if (!(this.rdoFemale.Checked || this.rdoMale.Checked))
+            if (!(this.rdoMale.Checked || this.rdoFemale.Checked))
             {
                 MessageBox.Show("请选择性别！", "Message");
                 return;
@@ -141,6 +144,40 @@ namespace StudentManagerPro
 
 
             #endregion
+
+            // 封装学生对象
+            Student student = new Student()
+            {
+                StudentName = this.tbStuName.Text.Trim(),
+                Birthday = Convert.ToDateTime(this.dtpBirthday.Text),
+                Gender = this.rdoMale.Checked ? "男" : "女",
+                StudentIdNo = this.tbIdCard.Text.Trim(),
+                Age = DateTime.Now.Year - Convert.ToDateTime(this.dtpBirthday.Text).Year,
+                PhoneNumber = this.tbPhone.Text.Trim(),
+                StudentAddress = this.tbAddress.Text.Trim(),
+                CardNo = this.tbIdCard.Text.Trim(),
+                ClassId = Convert.ToInt32(this.cbClassName.SelectedValue),
+                StuImage = this.pbStuPhoto.Image != null ?
+                new Common.SerializeObjectToString().SerializeObject(this.pbStuPhoto.Image) : "",
+                ClassName = this.cbClassName.Text
+            };
+            // 存入数据库
+            try
+            {
+                int studentId = studentService.AddStudent(student);
+                if (studentId > 1)
+                {
+                    student.StudentId = studentId;
+                    this.stuList.Add(student);
+                    this.dgvAddStudent.DataSource = null;
+                    this.dgvAddStudent.DataSource = this.stuList;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

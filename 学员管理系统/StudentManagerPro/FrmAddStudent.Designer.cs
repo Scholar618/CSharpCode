@@ -40,8 +40,8 @@ namespace StudentManagerPro
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbClassName = new System.Windows.Forms.ComboBox();
             this.dtpBirthday = new System.Windows.Forms.DateTimePicker();
-            this.rdoMale = new System.Windows.Forms.RadioButton();
             this.rdoFemale = new System.Windows.Forms.RadioButton();
+            this.rdoMale = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -58,18 +58,18 @@ namespace StudentManagerPro
             this.btnAddStu = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btSelectPhoto = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvAddStudent = new System.Windows.Forms.DataGridView();
+            this.StudentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StudentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Birthday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StudentIdNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CardNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStuPhoto)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAddStudent)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -150,8 +150,8 @@ namespace StudentManagerPro
             // 
             this.groupBox1.Controls.Add(this.cbClassName);
             this.groupBox1.Controls.Add(this.dtpBirthday);
-            this.groupBox1.Controls.Add(this.rdoMale);
             this.groupBox1.Controls.Add(this.rdoFemale);
+            this.groupBox1.Controls.Add(this.rdoMale);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label8);
@@ -188,36 +188,36 @@ namespace StudentManagerPro
             // 
             this.dtpBirthday.CustomFormat = "yyyy-MM-dd";
             this.dtpBirthday.Font = new System.Drawing.Font("宋体", 10F);
-            this.dtpBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpBirthday.Location = new System.Drawing.Point(527, 31);
             this.dtpBirthday.Margin = new System.Windows.Forms.Padding(4);
             this.dtpBirthday.Name = "dtpBirthday";
             this.dtpBirthday.Size = new System.Drawing.Size(176, 27);
             this.dtpBirthday.TabIndex = 3;
             // 
-            // rdoMale
-            // 
-            this.rdoMale.AutoSize = true;
-            this.rdoMale.Location = new System.Drawing.Point(393, 35);
-            this.rdoMale.Margin = new System.Windows.Forms.Padding(4);
-            this.rdoMale.Name = "rdoMale";
-            this.rdoMale.Size = new System.Drawing.Size(43, 19);
-            this.rdoMale.TabIndex = 2;
-            this.rdoMale.TabStop = true;
-            this.rdoMale.Text = "女";
-            this.rdoMale.UseVisualStyleBackColor = true;
-            // 
             // rdoFemale
             // 
             this.rdoFemale.AutoSize = true;
-            this.rdoFemale.Location = new System.Drawing.Point(351, 35);
+            this.rdoFemale.Location = new System.Drawing.Point(393, 35);
             this.rdoFemale.Margin = new System.Windows.Forms.Padding(4);
             this.rdoFemale.Name = "rdoFemale";
             this.rdoFemale.Size = new System.Drawing.Size(43, 19);
             this.rdoFemale.TabIndex = 2;
             this.rdoFemale.TabStop = true;
-            this.rdoFemale.Text = "男";
+            this.rdoFemale.Text = "女";
             this.rdoFemale.UseVisualStyleBackColor = true;
+            // 
+            // rdoMale
+            // 
+            this.rdoMale.AutoSize = true;
+            this.rdoMale.Location = new System.Drawing.Point(351, 35);
+            this.rdoMale.Margin = new System.Windows.Forms.Padding(4);
+            this.rdoMale.Name = "rdoMale";
+            this.rdoMale.Size = new System.Drawing.Size(43, 19);
+            this.rdoMale.TabIndex = 2;
+            this.rdoMale.TabStop = true;
+            this.rdoMale.Text = "男";
+            this.rdoMale.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -376,11 +376,11 @@ namespace StudentManagerPro
             this.btSelectPhoto.UseVisualStyleBackColor = true;
             this.btSelectPhoto.Click += new System.EventHandler(this.btSelectPhoto_Click);
             // 
-            // dataGridView1
+            // dgvAddStudent
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvAddStudent.AllowUserToAddRows = false;
+            this.dgvAddStudent.AllowUserToDeleteRows = false;
+            this.dgvAddStudent.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 10F);
@@ -388,92 +388,99 @@ namespace StudentManagerPro
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeight = 25;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column6,
-            this.Column7,
-            this.Column5});
-            this.dataGridView1.Location = new System.Drawing.Point(29, 451);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(959, 180);
-            this.dataGridView1.TabIndex = 5;
+            this.dgvAddStudent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvAddStudent.ColumnHeadersHeight = 25;
+            this.dgvAddStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.StudentId,
+            this.StudentName,
+            this.Gender,
+            this.Birthday,
+            this.StudentIdNo,
+            this.CardNo,
+            this.ClassName});
+            this.dgvAddStudent.Location = new System.Drawing.Point(29, 451);
+            this.dgvAddStudent.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvAddStudent.Name = "dgvAddStudent";
+            this.dgvAddStudent.ReadOnly = true;
+            this.dgvAddStudent.RowHeadersWidth = 51;
+            this.dgvAddStudent.RowTemplate.Height = 23;
+            this.dgvAddStudent.Size = new System.Drawing.Size(959, 180);
+            this.dgvAddStudent.TabIndex = 5;
             // 
-            // Column1
+            // StudentId
             // 
-            this.Column1.HeaderText = "学号";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column1.Width = 125;
+            this.StudentId.DataPropertyName = "StudentId";
+            this.StudentId.HeaderText = "学号";
+            this.StudentId.MinimumWidth = 6;
+            this.StudentId.Name = "StudentId";
+            this.StudentId.ReadOnly = true;
+            this.StudentId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.StudentId.Width = 125;
             // 
-            // Column2
+            // StudentName
             // 
-            this.Column2.HeaderText = "姓名";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column2.Width = 80;
+            this.StudentName.DataPropertyName = "StudentName";
+            this.StudentName.HeaderText = "姓名";
+            this.StudentName.MinimumWidth = 6;
+            this.StudentName.Name = "StudentName";
+            this.StudentName.ReadOnly = true;
+            this.StudentName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.StudentName.Width = 80;
             // 
-            // Column3
+            // Gender
             // 
-            this.Column3.HeaderText = "性别";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column3.Width = 60;
+            this.Gender.DataPropertyName = "StudentName";
+            this.Gender.HeaderText = "性别";
+            this.Gender.MinimumWidth = 6;
+            this.Gender.Name = "Gender";
+            this.Gender.ReadOnly = true;
+            this.Gender.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Gender.Width = 60;
             // 
-            // Column4
+            // Birthday
             // 
-            this.Column4.HeaderText = "出生日期";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column4.Width = 125;
+            this.Birthday.DataPropertyName = "Birthday";
+            this.Birthday.HeaderText = "出生日期";
+            this.Birthday.MinimumWidth = 6;
+            this.Birthday.Name = "Birthday";
+            this.Birthday.ReadOnly = true;
+            this.Birthday.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Birthday.Width = 125;
             // 
-            // Column6
+            // StudentIdNo
             // 
-            this.Column6.HeaderText = "身份证号";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 120;
+            this.StudentIdNo.DataPropertyName = "StudentIdNo";
+            this.StudentIdNo.HeaderText = "身份证号";
+            this.StudentIdNo.MinimumWidth = 6;
+            this.StudentIdNo.Name = "StudentIdNo";
+            this.StudentIdNo.ReadOnly = true;
+            this.StudentIdNo.Width = 120;
             // 
-            // Column7
+            // CardNo
             // 
-            this.Column7.HeaderText = "考勤卡号";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Width = 125;
+            this.CardNo.DataPropertyName = "CardNo";
+            this.CardNo.HeaderText = "考勤卡号";
+            this.CardNo.MinimumWidth = 6;
+            this.CardNo.Name = "CardNo";
+            this.CardNo.ReadOnly = true;
+            this.CardNo.Width = 125;
             // 
-            // Column5
+            // ClassName
             // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.HeaderText = "所在班级";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ClassName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ClassName.DataPropertyName = "ClassName";
+            this.ClassName.HeaderText = "所在班级";
+            this.ClassName.MinimumWidth = 6;
+            this.ClassName.Name = "ClassName";
+            this.ClassName.ReadOnly = true;
+            this.ClassName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // FrmAddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1011, 646);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvAddStudent);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btSelectPhoto);
             this.Controls.Add(this.button4);
@@ -492,7 +499,7 @@ namespace StudentManagerPro
             ((System.ComponentModel.ISupportInitialize)(this.pbStuPhoto)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAddStudent)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -509,8 +516,8 @@ namespace StudentManagerPro
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DateTimePicker dtpBirthday;
-        private System.Windows.Forms.RadioButton rdoMale;
         private System.Windows.Forms.RadioButton rdoFemale;
+        private System.Windows.Forms.RadioButton rdoMale;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -528,13 +535,13 @@ namespace StudentManagerPro
         private System.Windows.Forms.Button btnAddStu;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btSelectPhoto;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridView dgvAddStudent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudentId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudentName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Birthday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudentIdNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CardNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClassName;
     }
 }

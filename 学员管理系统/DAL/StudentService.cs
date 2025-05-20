@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Models;
+
 namespace DAL
 {
     /// <summary>
@@ -38,6 +40,29 @@ namespace DAL
                 return true;
             else
                 return false;
+        }
+
+        /// <summary>
+        /// 保存学员对象到数据库
+        /// </summary>
+        /// <param name="stu"></param>
+        /// <returns>返回新学员ID学号</returns>
+        public int AddStudent(Student stu)
+        {
+            StringBuilder sqlBuilder = new StringBuilder("insert into Students ");
+            sqlBuilder.Append("(StudentName, Birthday, Gender, StudentIdNo, Age, PhoneNumber, StudentAddress, CardNo, ClassId, StuImage) ");
+            sqlBuilder.Append("values('{0}', '{1}', '{2}', {3}, '{4}', '{5}', '{6}', '{7}', {8}, '{9}');select @@identity");
+            string sql = string.Format(sqlBuilder.ToString(), stu.StudentName, stu.Birthday.ToString("yyyy-MM-dd"), stu.Gender, stu.StudentIdNo,
+                            stu.Age, stu.PhoneNumber, stu.StudentAddress, stu.CardNo, stu.ClassId, stu.StuImage);
+            try
+            {
+                return Convert.ToInt32(SQLHelper.GetSingleResult(sql));
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("添加学员时发生数据库异常：" + ex.Message);
+            }
         }
     }
 }
