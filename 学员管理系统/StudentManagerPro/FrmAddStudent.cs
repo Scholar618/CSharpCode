@@ -18,6 +18,7 @@ namespace StudentManagerPro
         public StudentClassService studentClassService = new StudentClassService();
         public StudentService studentService = new StudentService();
         List<Student> stuList = new List<Student>();
+        string filename = null;
 
         public FrmAddStudent()
         {
@@ -42,7 +43,8 @@ namespace StudentManagerPro
             DialogResult result = openFileDialog.ShowDialog();
             if (result == DialogResult.OK)
             {
-                this.pbStuPhoto.Image = Image.FromFile(openFileDialog.FileName);
+                filename = openFileDialog.FileName;
+                this.pbStuPhoto.Image = Image.FromFile(filename);
             }
         }
 
@@ -155,10 +157,9 @@ namespace StudentManagerPro
                 Age = DateTime.Now.Year - Convert.ToDateTime(this.dtpBirthday.Text).Year,
                 PhoneNumber = this.tbPhone.Text.Trim(),
                 StudentAddress = this.tbAddress.Text.Trim(),
-                CardNo = this.tbIdCard.Text.Trim(),
+                CardNo = this.tbWorkCard.Text.Trim(),
                 ClassId = Convert.ToInt32(this.cbClassName.SelectedValue),
-                StuImage = this.pbStuPhoto.Image != null ?
-                new Common.SerializeObjectToString().SerializeObject(this.pbStuPhoto.Image) : "",
+                StuImage = this.pbStuPhoto.Image != null ? filename : "",
                 ClassName = this.cbClassName.Text
             };
             // 存入数据库
