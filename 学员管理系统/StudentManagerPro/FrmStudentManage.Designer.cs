@@ -29,31 +29,34 @@ namespace StudentManagerPro
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.sortById = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.sortByName = new System.Windows.Forms.Button();
+            this.btSelectByClass = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.cbClassName = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btSelectById = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvShowData = new System.Windows.Forms.DataGridView();
+            this.StudentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StudentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Birthday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StudentIdNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShowData)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -69,7 +72,7 @@ namespace StudentManagerPro
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("宋体", 10F);
-            this.btnClose.Location = new System.Drawing.Point(609, 24);
+            this.btnClose.Location = new System.Drawing.Point(655, 36);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(73, 35);
             this.btnClose.TabIndex = 1;
@@ -79,97 +82,110 @@ namespace StudentManagerPro
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.sortById);
+            this.groupBox1.Controls.Add(this.button6);
+            this.groupBox1.Controls.Add(this.sortByName);
+            this.groupBox1.Controls.Add(this.btSelectByClass);
+            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.cbClassName);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(19, 77);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(503, 66);
+            this.groupBox1.Size = new System.Drawing.Size(719, 66);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "[按照班级查询]";
+            // 
+            // sortById
+            // 
+            this.sortById.Font = new System.Drawing.Font("宋体", 10F);
+            this.sortById.Location = new System.Drawing.Point(416, 29);
+            this.sortById.Name = "sortById";
+            this.sortById.Size = new System.Drawing.Size(86, 26);
+            this.sortById.TabIndex = 2;
+            this.sortById.Text = "学号降序";
+            this.sortById.UseVisualStyleBackColor = true;
+            this.sortById.Click += new System.EventHandler(this.sortById_Click);
+            // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("宋体", 10F);
+            this.button6.Location = new System.Drawing.Point(636, 27);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(54, 30);
+            this.button6.TabIndex = 2;
+            this.button6.Text = "删除";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // sortByName
+            // 
+            this.sortByName.Font = new System.Drawing.Font("宋体", 10F);
+            this.sortByName.Location = new System.Drawing.Point(301, 29);
+            this.sortByName.Name = "sortByName";
+            this.sortByName.Size = new System.Drawing.Size(93, 26);
+            this.sortByName.TabIndex = 2;
+            this.sortByName.Text = "姓名降序";
+            this.sortByName.UseVisualStyleBackColor = true;
+            this.sortByName.Click += new System.EventHandler(this.sortByName_Click);
+            // 
+            // btSelectByClass
+            // 
+            this.btSelectByClass.Font = new System.Drawing.Font("宋体", 10F);
+            this.btSelectByClass.Location = new System.Drawing.Point(202, 29);
+            this.btSelectByClass.Name = "btSelectByClass";
+            this.btSelectByClass.Size = new System.Drawing.Size(72, 27);
+            this.btSelectByClass.TabIndex = 2;
+            this.btSelectByClass.Text = "查询";
+            this.btSelectByClass.UseVisualStyleBackColor = true;
+            this.btSelectByClass.Click += new System.EventHandler(this.btSelectByClass_Click);
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("宋体", 10F);
+            this.button5.Location = new System.Drawing.Point(557, 27);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(59, 30);
+            this.button5.TabIndex = 2;
+            this.button5.Text = "修改";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // cbClassName
+            // 
+            this.cbClassName.FormattingEnabled = true;
+            this.cbClassName.Location = new System.Drawing.Point(90, 32);
+            this.cbClassName.Name = "cbClassName";
+            this.cbClassName.Size = new System.Drawing.Size(105, 20);
+            this.cbClassName.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("宋体", 10F);
-            this.label2.Location = new System.Drawing.Point(6, 34);
+            this.label2.Location = new System.Drawing.Point(6, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 14);
             this.label2.TabIndex = 0;
             this.label2.Text = "学员班级：";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(90, 31);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(105, 20);
-            this.comboBox1.TabIndex = 1;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("宋体", 10F);
-            this.button2.Location = new System.Drawing.Point(228, 29);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(78, 24);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "查询";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("宋体", 10F);
-            this.button3.Location = new System.Drawing.Point(323, 29);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(78, 24);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "姓名降序";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("宋体", 10F);
-            this.button4.Location = new System.Drawing.Point(418, 29);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(78, 24);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "学号降序";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Font = new System.Drawing.Font("宋体", 10F);
-            this.button5.Location = new System.Drawing.Point(546, 108);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(56, 24);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "修改";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Font = new System.Drawing.Font("宋体", 10F);
-            this.button6.Location = new System.Drawing.Point(633, 108);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(49, 24);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "删除";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.button7);
+            this.groupBox2.Controls.Add(this.btSelectById);
             this.groupBox2.Location = new System.Drawing.Point(19, 172);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(439, 56);
+            this.groupBox2.Size = new System.Drawing.Size(365, 60);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "[按学号精确查询]";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Location = new System.Drawing.Point(113, 26);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(142, 21);
+            this.textBox1.TabIndex = 1;
             // 
             // label3
             // 
@@ -181,110 +197,132 @@ namespace StudentManagerPro
             this.label3.TabIndex = 0;
             this.label3.Text = "请输入学号：";
             // 
-            // textBox1
+            // btSelectById
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(113, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(216, 21);
-            this.textBox1.TabIndex = 1;
-            // 
-            // button7
-            // 
-            this.button7.Font = new System.Drawing.Font("宋体", 10F);
-            this.button7.Location = new System.Drawing.Point(357, 23);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(78, 24);
-            this.button7.TabIndex = 2;
-            this.button7.Text = "提交查询";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btSelectById.Font = new System.Drawing.Font("宋体", 10F);
+            this.btSelectById.Location = new System.Drawing.Point(277, 23);
+            this.btSelectById.Name = "btSelectById";
+            this.btSelectById.Size = new System.Drawing.Size(82, 28);
+            this.btSelectById.TabIndex = 2;
+            this.btSelectById.Text = "提交查询";
+            this.btSelectById.UseVisualStyleBackColor = true;
+            this.btSelectById.Click += new System.EventHandler(this.btSelectById_Click);
             // 
             // button8
             // 
             this.button8.Font = new System.Drawing.Font("宋体", 10F);
-            this.button8.Location = new System.Drawing.Point(510, 195);
+            this.button8.Location = new System.Drawing.Point(598, 201);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(140, 24);
             this.button8.TabIndex = 2;
             this.button8.Text = "打印当前学员信息";
             this.button8.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvShowData
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 10F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeight = 25;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
-            this.dataGridView1.Location = new System.Drawing.Point(19, 257);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(663, 255);
-            this.dataGridView1.TabIndex = 4;
+            this.dgvShowData.AllowUserToAddRows = false;
+            this.dgvShowData.AllowUserToDeleteRows = false;
+            this.dgvShowData.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvShowData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvShowData.ColumnHeadersHeight = 25;
+            this.dgvShowData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.StudentId,
+            this.StudentName,
+            this.Gender,
+            this.Birthday,
+            this.StudentIdNo,
+            this.PhoneNumber,
+            this.ClassName});
+            this.dgvShowData.Location = new System.Drawing.Point(19, 260);
+            this.dgvShowData.Name = "dgvShowData";
+            this.dgvShowData.ReadOnly = true;
+            this.dgvShowData.RowTemplate.Height = 23;
+            this.dgvShowData.Size = new System.Drawing.Size(719, 194);
+            this.dgvShowData.TabIndex = 6;
             // 
-            // Column1
+            // StudentId
             // 
-            this.Column1.HeaderText = "学号";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column1.Width = 120;
+            this.StudentId.DataPropertyName = "StudentId";
+            this.StudentId.HeaderText = "学号";
+            this.StudentId.Name = "StudentId";
+            this.StudentId.ReadOnly = true;
+            this.StudentId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // Column2
+            // StudentName
             // 
-            this.Column2.HeaderText = "姓名";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column2.Width = 120;
+            this.StudentName.DataPropertyName = "StudentName";
+            this.StudentName.HeaderText = "姓名";
+            this.StudentName.Name = "StudentName";
+            this.StudentName.ReadOnly = true;
+            this.StudentName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.StudentName.Width = 80;
             // 
-            // Column3
+            // Gender
             // 
-            this.Column3.HeaderText = "性别";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column3.Width = 120;
+            this.Gender.DataPropertyName = "Gender";
+            this.Gender.HeaderText = "性别";
+            this.Gender.Name = "Gender";
+            this.Gender.ReadOnly = true;
+            this.Gender.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Gender.Width = 60;
             // 
-            // Column4
+            // Birthday
             // 
-            this.Column4.HeaderText = "出生日期";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column4.Width = 120;
+            this.Birthday.DataPropertyName = "Birthday";
+            this.Birthday.HeaderText = "出生日期";
+            this.Birthday.Name = "Birthday";
+            this.Birthday.ReadOnly = true;
+            this.Birthday.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // Column5
+            // StudentIdNo
             // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.HeaderText = "所在班级";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.StudentIdNo.DataPropertyName = "StudentIdNo";
+            this.StudentIdNo.HeaderText = "身份证号";
+            this.StudentIdNo.Name = "StudentIdNo";
+            this.StudentIdNo.ReadOnly = true;
+            this.StudentIdNo.Width = 120;
+            // 
+            // PhoneNumber
+            // 
+            this.PhoneNumber.DataPropertyName = "PhoneNumber";
+            this.PhoneNumber.HeaderText = "手机号码";
+            this.PhoneNumber.Name = "PhoneNumber";
+            this.PhoneNumber.ReadOnly = true;
+            // 
+            // ClassName
+            // 
+            this.ClassName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ClassName.DataPropertyName = "ClassName";
+            this.ClassName.HeaderText = "所在班级";
+            this.ClassName.Name = "ClassName";
+            this.ClassName.ReadOnly = true;
+            this.ClassName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("宋体", 10F);
+            this.button1.Location = new System.Drawing.Point(435, 201);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(140, 24);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "导出到Excel";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // FrmStudentManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(705, 524);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button6);
+            this.ClientSize = new System.Drawing.Size(768, 504);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dgvShowData);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.btnClose);
@@ -295,7 +333,7 @@ namespace StudentManagerPro
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShowData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,21 +346,24 @@ namespace StudentManagerPro
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button sortById;
+        private System.Windows.Forms.Button sortByName;
+        private System.Windows.Forms.Button btSelectByClass;
+        private System.Windows.Forms.ComboBox cbClassName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btSelectById;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridView dgvShowData;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudentId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudentName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Birthday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudentIdNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PhoneNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClassName;
     }
 }

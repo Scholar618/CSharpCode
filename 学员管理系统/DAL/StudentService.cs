@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -64,5 +65,36 @@ namespace DAL
                 throw new Exception("添加学员时发生数据库异常：" + ex.Message);
             }
         }
+
+        public List<Student> GetStudent(int classId, string classname)
+        {
+            string sql = string.Format("select StudentId, StudentName, Gender, Birthday, StudentIdNo, PhoneNumber " +
+                "from Students where ClassId = {0}", classId);
+            List<Student> list = new List<Student>();
+            try
+            {
+                SqlDataReader objReader = SQLHelper.GetReader(sql);
+                while (objReader.Read())
+                {
+                    list.Add(new Student()
+                    {
+                        StudentId = Convert.ToInt32(objReader["StudentId"]),
+                        StudentName = objReader["StudentName"].ToString(),
+                        Gender = objReader["Gender"].ToString(),
+                        Birthday = Convert.ToDateTime(objReader["Birthday"]),
+                        StudentIdNo = objReader["StudentIdNo"].ToString(),
+                        PhoneNumber = objReader["PhoneNumber"].ToString(),
+                        ClassName = classname
+                    }); ;
+                }
+                objReader.Close();
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("应用程序和数据库连接出现问题：" + ex.Message);
+            }
+            return list; 
+        }
+
     }
 }
