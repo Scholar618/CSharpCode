@@ -1,0 +1,68 @@
+﻿<Window x:Class="WPFTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFTest"
+        mc:Ignorable="d"
+        Title="新文件 1 - Nodepad++" Height="450" Width="800">
+    <Grid ShowGridLines="true">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="20" />
+            <RowDefinition/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+            <Button Height="20" Width="40" Content="文件"> </Button>
+            <Button Height="20" Width="40" Content="编辑"></Button>
+            <Button Height="20" Width="40" Content="查看"></Button>
+            <Button Height="20" Width="40" Content="外观"></Button>
+            <Button Height="20" Width="40" Content="设置"></Button>
+            <Button Height="20" Width="40" Content="帮助"></Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
+            <Button Height="20" Width="20" Content="1"></Button>
+            <Button Height="20" Width="20" Content="2"></Button>
+            <Button Height="20" Width="20" Content="3"></Button>
+            <Button Height="20" Width="20" Content="4"></Button>
+            <Button Height="20" Width="20" Content="5"></Button>
+            <Button Height="20" Width="20" Content="6"></Button>
+        </StackPanel>
+
+        <Grid ShowGridLines="true" Grid.Row="2" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical">
+                <Button Height="20" Content="1"></Button>
+                <Button Height="20" Content="2"></Button>
+                <Button Height="20" Content="3"></Button>
+                <Button Height="20" Content="4"></Button>
+                <Button Height="20" Content="5"></Button>
+                <Button Height="20" Content="6"></Button>
+            </StackPanel>
+
+            <TextBox Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" ></TextBox>
+        </Grid>
+
+        <Grid ShowGridLines="True" Grid.Row="3" Grid.Column="0">
+            <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Horizontal">
+                <Button Width="20" Content="1"></Button>
+                <Button Width="20" Content="2"></Button>
+                <Button Width="20" Content="3"></Button>
+                <Button Width="20" Content="4"></Button>
+                <Button Width="20" Content="5"></Button>
+                <Button Width="20" Content="6"></Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+    
+
+    
+</Window>
