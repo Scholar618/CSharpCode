@@ -1,0 +1,10 @@
+E:\Github\CSharpCode\Demo\WinformText\bin\Debug\WinformText.exe.config
+E:\Github\CSharpCode\Demo\WinformText\bin\Debug\WinformText.exe
+E:\Github\CSharpCode\Demo\WinformText\bin\Debug\WinformText.pdb
+E:\Github\CSharpCode\Demo\WinformText\obj\Debug\WinformText.csproj.AssemblyReference.cache
+E:\Github\CSharpCode\Demo\WinformText\obj\Debug\WinformText.Form1.resources
+E:\Github\CSharpCode\Demo\WinformText\obj\Debug\WinformText.Properties.Resources.resources
+E:\Github\CSharpCode\Demo\WinformText\obj\Debug\WinformText.csproj.GenerateResource.cache
+E:\Github\CSharpCode\Demo\WinformText\obj\Debug\WinformText.csproj.CoreCompileInputs.cache
+E:\Github\CSharpCode\Demo\WinformText\obj\Debug\WinformText.exe
+E:\Github\CSharpCode\Demo\WinformText\obj\Debug\WinformText.pdb
