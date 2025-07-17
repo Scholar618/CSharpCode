@@ -65,6 +65,7 @@ namespace WinformText
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnSave = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -436,11 +437,22 @@ namespace WinformText
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(696, 43);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(86, 23);
+            this.btnSave.TabIndex = 8;
+            this.btnSave.Text = "属性保存";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(829, 499);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -494,6 +506,7 @@ namespace WinformText
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button btnSave;
     }
 }
 

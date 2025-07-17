@@ -15,17 +15,27 @@ namespace WinformText
 {
     public partial class Form1 : Form
     {
+        
+
         public Form1()
         {
             InitializeComponent();
             string path = LoadXml();
             this.tbFilePath.Text = path;
-            propertyGrid1.SelectedObject = SwVersion;
+            string data = LoadData(); // 加载属性数据
+            string[] strs = data.Split(',');
+            DataProperty.swVersion = strs[0];
+            DataProperty.upDateTime = strs[1];
+            swVersion = new MyProperty
+            {
+                SwVersion = strs[0],
+                UpDateTime = strs[1]
+            };
+            propertyGrid1.SelectedObject = swVersion;
         }
 
+        public MyProperty swVersion;
         private ProduceData my_ProduceData = new ProduceData();
-        public MyProperty SwVersion = new MyProperty();
-
         #region 生成随机数和清除数据
         // 生产随机数据
         private void btCreateRandomData_Click(object sender, EventArgs e)
@@ -227,7 +237,56 @@ namespace WinformText
         }
         #endregion
 
+        #region 保存加载属性数据
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            DataProperty.swVersion = swVersion.SwVersion;
+            DataProperty.upDateTime = swVersion.UpDateTime;
+            SaveToData(DataProperty.swVersion, DataProperty.upDateTime);
+        }
+
+        private bool SaveToData(string str1, string str2)
+        {
+            try
+            {
+                using (FileStream fileStream = new FileStream(tbFilePath.Text + "\\saveData.config", FileMode.OpenOrCreate))
+                {
+                    BinaryFormatter bina = new BinaryFormatter();
+                    bina.Serialize(fileStream, str1 + "," + str2);
+                }
+                MessageBox.Show("属性文件写入完成！");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("属性文件写入失败！");
+                return false;
+            }
+            return true;
+        }
+
+        private string LoadData()
+        {
+            string data = "";
+            try
+            {
+                using (FileStream fileStream = new FileStream(tbFilePath.Text + "\\saveData.config", FileMode.OpenOrCreate))
+                {
+                    BinaryFormatter bina = new BinaryFormatter();
+                    data = bina.Deserialize(fileStream).ToString();
+                }
+                MessageBox.Show("加载属性数据完成！");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("加载属性数据失败！");
+                return data;
+            }
+            return data;
+        }
+        #endregion
     }
+
+
 
     [Serializable]
     public class ProduceData
@@ -242,9 +301,16 @@ namespace WinformText
     }
 
     [Serializable]
+    public class DataProperty
+    {
+        public static string swVersion { get; set; }
+        public static string upDateTime { get; set; }
+    }
+
+    [Serializable]
     public class MyProperty              //声明MyProperty类
     {
-        private string _swVersion = "V1.0.0";
+        private string _swVersion = DataProperty.swVersion;
 
         [DisplayName("软件版本号"), Category("软件版本管控"), Description("当前的软件版本")]
         public string SwVersion
@@ -252,13 +318,15 @@ namespace WinformText
             get => _swVersion;
             set => _swVersion = value;
         }
-        private string _upDateTime = "20250716";
+        private string _upDateTime = DataProperty.upDateTime;
         [DisplayName("软件版本号"), Category("软件版本管控"), Description("当前的软件版本")]
         public string UpDateTime
         {
             get => _upDateTime;
             set => _upDateTime = value;
         }
+
+
     }
 
 }
